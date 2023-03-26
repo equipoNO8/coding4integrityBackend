@@ -22,11 +22,7 @@ class Server {
         this.app.use(express.json());
     }
     routes() {
-        this.app.get(`${this.mainPath}`, (req, res)=> { 
-            res.json({
-                ok: true,
-            });
-        });
+        this.app.use(`${this.mainPath}`, require('./routes/denuncias.routes'))
     }
     listen() {
         this.app.listen(this.port, () => {

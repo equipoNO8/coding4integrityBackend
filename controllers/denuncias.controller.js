@@ -28,7 +28,7 @@ function post(req, res){
         });
         const fecha = new Date().toISOString().slice(0, 10);
         const hora = new Date().toISOString().slice(11, 19);
-        mysqlclient.query( `INSERT INTO Denuncia (fecha, hora, denuncia, Correo, edad, Folios, lugar) VALUES (${fecha}, ${hora}, ${denuncia}, ${correo}, ${edad}, ${folio}, ${lugar};`, function(error){
+        mysqlclient.query( `INSERT INTO denuncias (fecha, hora, denuncia, Correo, edad, Folios, lugar) VALUES (${fecha}, ${hora}, ${denuncia}, ${correo}, ${edad}, ${folio}, ${lugar};`, function(error){
             if(error)
             {
                 return res.status(400).json({

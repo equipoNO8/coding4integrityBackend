@@ -2,7 +2,7 @@ const { Router } = require("express");
 const { post } = require("../controllers/denuncias.controller")
 const router = Router();
 
-router.get("/post", post);
+router.post("/post", post);
 
 
 module.exports = router;
